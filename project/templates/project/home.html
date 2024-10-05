@@ -1,0 +1,239 @@
+{% extends "project/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="wrapper">
+<!--Главная-->
+    <section class="main">
+        <div class="container">
+            {% include 'project/navbar.html' %}
+            <div class="d-flex stage ">
+                <div class="col-5 col-8 col-md-7 col-lg-6 stage__content align-items-center el-paroller"
+                    data-paroller-factor="0.2"
+                    data-paroller-factor-xs="0.1"
+                    data-paroller-factor-sm="0.15"
+                    data-paroller-type="foreground"
+                    data-paroller-direction="vertical"
+                >
+                    <h1 class="wow stage__title" data-wow-duration="1s" data-wow-delay="0.25s">сервис для оценки
+                        <span class="stage__title-span">будущей</span>
+                        стоимости продукта</h1>
+                    <p class="wow stage__text" data-wow-duration="1s" data-wow-delay="0.5s">создание прогнозных моделей для ип и малого бизнеса</p>
+                    <div class="wow stage__actions" data-wow-duration="1s" data-wow-delay="0.75s">
+                        <a class="button" href="{% url 'make_forecast' %}">начать</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--Преимущества-->
+        <section class="wow container advantages"  data-wow-duration="1s" data-wow-delay="0.1s" >
+            <div class="row gy-5 row-cols-1 row-cols-sm-2 row-cols-md-3">
+                <div class="col">
+                    <div class="card card-shadow h-100" >
+                        <div class="card-body">
+                            <div class="advantages__icons">
+                                <i class="bi bi-hand-index "></i>
+                            </div>
+                             <h4 class="card-title">простой интерфейс</h4>
+                             <p class="card-text">для построения прогноза не требуется дополнительных навыков</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                      <div class="card card-shadow dark h-100" >
+                         <div class="card-body">
+                             <div class="advantages__icons">
+                                  <i class="bi bi-cash-coin light"></i>
+                             </div>
+                             <h4 class="card-title light ">бесплатный сервис</h4>
+                             <p class="card-text light">все функции сервиса доступны совершенно бесплатно</p>
+                         </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class=" card card-shadow h-100">
+                        <div class="card-body">
+                            <div class="advantages__icons">
+                                <i class="bi bi-clock-history advantages__icons"></i>
+                            </div>
+                             <h4 class="card-title ">быстрый результат</h4>
+                             <p class="card-text ">прогноз строится в несколько кликлов, а результат появляется в течение пары минут</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<!--Легко и доступно-->
+
+    <section class="about container pt-md-2 pt-lg-5">
+        <div class="row row-cols-1 row-cols-sm-2">
+            <div class="col col-md-6 el-paroller" align="center"
+                 data-paroller-factor="0.03"
+                 data-paroller-type="foreground"
+                 data-paroller-direction="vertical">
+                <img src="{% static './img/gr.png'%}" class="about__img pt-2 ps-md-0 ps-lg-4" alt="График">
+            </div>
+            <div class="col about__text"
+            >
+                <h2 class="description__title-small">о сервисе</h2>
+                <h3 class="description__title-main">легко & доступно</h3>
+                <p class="description__text pt-3 pt-lg-5"> прогнозирование стоимости товаров позволяет
+                    предприятиям адаптироваться к изменяющимся
+                    условиям рынка, планировать деятельность и
+                    принимать стратегические решения
+                </p>
+                <p class="description__text pt-2 pt-lg-3"> для использования сервиса достаточно:</p>
+                <ul class="about__list">
+                    <li>
+                         <i class="bi bi-check-circle about__icon"></i>
+                         <span class="description__text ps-1">
+                                 загрузить исторические данные
+                         </span>
+                    </li>
+                    <li>
+                         <i class="bi bi-check-circle about__icon"></i>
+                         <span class="description__text ps-1">
+                                 нажать "построить прогноз"
+                         </span>
+                    </li>
+                     <li>
+                         <i class="bi bi-check-circle about__icon" ></i>
+                         <span class="description__text ps-1" >
+                                 сохранить результат
+                         </span>
+                    </li>
+                </ul>
+                 <div class="about__actions pt-3 pt-lg-5">
+                     <a class="button button-light" href="{% url 'make_forecast' %}" role="button" >узнать больше</a>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+<!--  Возможности  -->
+    <section class="wow features container" data-wow-duration="1s" data-wow-delay="0.2s">
+        <div class=" features__text text-center" >
+            <h2 class="description__title-small">возможности</h2>
+            <h3 class="description__title-main">что мы предлагаем</h3>
+        </div>
+        <div class="row gy-5 row-cols-1 row-cols-sm-2 row-cols-md-3">
+            <div class="col">
+                    <div class="card card-shadow h-100"  >
+                        <div class="card-body">
+                                <div class="circle text-center ">
+                                <i class="bi bi-graph-up-arrow features__icons"></i>
+
+                            </div>
+
+                             <h4 class="card-title pt-4">составление прогнозов</h4>
+                             <p class="card-text">загрузив исторические данные на сайт, вы можете построить прогноз стоимости продукта</p>
+                        </div>
+                    </div>
+            </div>
+            <div class="col">
+                    <div class="card card-shadow h-100"  >
+                        <div class="card-body">
+                              <div class="circle text-center">
+                                <i class="bi bi-database-check features__icons"></i>
+                              </div>
+                             <h4 class="card-title">обработка исторических данных</h4>
+                             <p class="card-text"> перед созданием прогноза происходит предобработка исторических данных</p>
+                        </div>
+                    </div>
+            </div>
+            <div class="col">
+                    <div class="card card-shadow h-100"  >
+                        <div class="card-body">
+                              <div class="circle text-center">
+                                <i class="bi bi-table features__icons"></i>
+                              </div>
+                             <h4 class="card-title">создание таблиц</h4>
+                             <p class="card-text">после завершения прогнозирования данные визуализируются в виде таблицы</p>
+                        </div>
+                    </div>
+            </div>
+            <div class="col">
+                    <div class="card card-shadow h-100"  >
+                        <div class="card-body">
+                              <div class="circle text-center">
+                                <i class="bi bi-bar-chart features__icons"></i>
+                              </div>
+                             <h4 class="card-title">построение графиков</h4>
+                             <p class="card-text">помимо табличного вида данные предоставляются также в качестве графиков</p>
+                        </div>
+                    </div>
+            </div>
+            <div class="col">
+                    <div class="card card-shadow h-100"  >
+                        <div class="card-body">
+                              <div class="circle text-center">
+                                <i class="bi bi-cloud-download features__icons"></i>
+                              </div>
+                             <h4 class="card-title">сохранение данных в различных форматах</h4>
+                             <p class="card-text">созданные таблицы и графики доступны для скачивания и сохранения в лк</p>
+                        </div>
+                    </div>
+            </div>
+            <div class="col">
+                    <div class="card card-shadow h-100"  >
+                        <div class="card-body">
+                              <div class="circle text-center">
+                                <i class="bi bi-card-checklist features__icons"></i>
+                              </div>
+                             <h4 class="card-title">просмотр ранее созданных прогнозов</h4>
+                             <p class="card-text">при регистрации на сайте у вас есть возможность скачивания ранее созданных прогнозов</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+    </section>
+
+<!-- О нас-->
+    <section class="contacts container">
+        <div class="row row-cols-1 row-cols-sm-2">
+            <div class="col contacts__text">
+                <h2 class="description__title-small">о нас</h2>
+                <h3 class="description__title-main">универсальный подход</h3>
+                <p class="description__text pt-md-4 pt-lg-5">
+                    мы предлагаем быстрое решение с миниальными
+                    финаносовыми затратами для получения качественных прогнозных
+                    результатов, основанных на современных методах машинного обучения.
+                </p>
+                <p class="description__text pt-md-2 pt-lg-3">
+                    при возникновении вопросов или пожеланий вы всегда можете
+                    связаться с нами по электронной почте или позвонив по телефону
+                </p>
+                <p class="description__text pt-md-2 pt-lg-3">
+                    контакты для связи:
+                </p>
+                <ul>
+                    <li>
+                        <i class="bi bi-telephone contacts__icon"></i>
+                        <a href="tel:+7(3822)-60-61-43" class="description__text ps-2">+7(3822)-60-61-43</a>
+                    </li>
+                    <li>
+                         <i class="bi bi-envelope-at contacts__icon"></i>
+                         <a href="mailto:PREVISION@MAIL.RU" class="description__text ps-2">PREVISION@MAIL.RU</a>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="col p-1 el-paroller"
+                data-paroller-factor="0.03"
+                 data-paroller-factor-sm="0.03"
+                 data-paroller-factor-xs="-0.02"
+                 data-paroller-type="foreground"
+                 data-paroller-direction="vertical">
+
+                 <img src="{% static './img/ppl.png'%}" class="contacts__img " alt="люди">
+            </div>
+        </div>
+    </section>
+</div>
+{% include 'project/footer.html' %}
+
+{% endblock content %}

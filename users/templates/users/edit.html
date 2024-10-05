@@ -1,0 +1,114 @@
+{% extends "project/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="wrapper">
+<section class="profile edit">
+    <div class="container">
+        {% include 'project/navbar.html' %}
+        <div class="row row-cols-1 row-cols-sm-2 profile__content justify-content-between">
+            <div class="col col-sm-6 col-xl-4 ps-0 mt-0 mt-xl-5">
+                <p class="wow forecast-main__title-small mb-0 mt-sm-3 mt-xl-5" data-wow-duration="1s" data-wow-delay="0.25s" >личный кабинет</p>
+                <h1 class="wow stage__title mt-4 mt-lg-2 mt-xl-4 " data-wow-duration="1s" data-wow-delay="0.5s">
+                    изменение данных
+                </h1>
+            </div>
+            <div class="col col-sm-6 p-0">
+                <div class="card profile__card edit__card text-center">
+                    <div class="card-body profile__card-body align-content-around">
+                       <form class="edit__form" method="POST" enctype="multipart/form-data">
+                          {% csrf_token %}
+                          <fieldset class="form-group ">
+                              {% for field in form %}
+                                 <p class="edit__input">{{ field }}</p>
+                              {% endfor %}
+                          </fieldset>
+                          <div class="form-group button button-light  pt-2 pb-2 ps-5 pe-5 mt-5 " >
+                              <button id="btn" class="button-input " type="submit">обновить</button>
+                          </div>
+                      </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+{% include 'project/footer.html' %}
+<!--&lt;!&ndash;  Главная   &ndash;&gt;-->
+<!--    <div class="position-relative bg-image-profile ">-->
+<!--        <div class="container" style=" width: 81rem;" >-->
+<!--             <nav class="navbar navbar-expand-lg nav">-->
+<!--                <div class="container-fluid"  >-->
+<!--                    <div class="col-md-2  ml-0 logo"  style="margin-right:1rem">-->
+<!--                        <a class="navbar-brand logo " href="{% url 'home' %}">PREVISION</a>-->
+<!--                        <button class="navbar-toggler" type="button"  data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--                          <span class="navbar-toggler-icon"></span>-->
+<!--                        </button>-->
+<!--                    </div>-->
+<!--                    <div class="collapse navbar-collapse " id="navbarNavAltMarkup">-->
+<!--                        <div class="col-md-2" style="padding-left: 0px" >-->
+<!--                          <div class="navbar-nav"  >-->
+<!--                            <a class="nav-link menu" style="font-size: 17px" aria-current="page" href="{% url 'make_forecast' %}">ПРОГНОЗ</a>-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                         <div class="col-md-9" style="padding-left: 0px" >-->
+<!--                          <div class="navbar-nav"  >-->
+
+<!--                            {% if request.user.is_authenticated %}-->
+<!--                                <a class="nav-link menu" style="font-size: 17px; " aria-current="page" href="{% url 'profile' %}">ПРОФИЛЬ</a>-->
+<!--                            {% endif %}-->
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                        <div class="col" style="padding-left: 0px">-->
+<!--                          <div class="navbar-nav"  >-->
+<!--                              {% if request.user.is_authenticated %}-->
+<!--                                <form action="{% url 'logout' %}" method="post">-->
+<!--                                   {% csrf_token %}-->
+<!--                                    <button type="submit" class="nav-link menu-profile" style="font-size: 17px;  border:none">ВЫЙТИ</button>-->
+<!--                                </form>-->
+<!--                              {% else %}-->
+<!--                                <a class="nav-link menu-profile" style="font-size: 17px; " aria-current="page" href="{% url 'login' %}">ВОЙТИ</a>-->
+<!--                              {% endif %}-->
+
+<!--                          </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--             </nav>-->
+<!--            <div class="row">-->
+<!--                 <div class="col-4  mt-5 pt-3" style="padding-left: 1.5vw" >-->
+
+<!--                        <div class="main-text-small " style="letter-spacing: 0px; color:#E9B0F3; font-weight:600">ЛИЧНЫЙ КАБИНЕТ</div>-->
+<!--                         <div class="main-text pt-2" style="font-size:3em;letter-spacing: 1px; line-height:2.5rem;">ИЗМЕНЕНИЕ</div>-->
+<!--                         <div class="main-text text-outline" style="font-size:3em;letter-spacing: 1px;color:#A136A9">ДАННЫХ</div>-->
+<!--                 </div>-->
+<!--                 <div class="col-7 " style="padding-top:7.5vw;padding-left:6vw; padding-right:6vw ">-->
+<!--                     <div class="pt-3">-->
+<!--                         <div class="card p-4" style="background-color:#F3F3FF; border: 3px solid #E3E3FF;border-radius:20px">-->
+<!--                            <div class="card-body p-3">-->
+<!--                               <form method="POST" enctype="multipart/form-data">-->
+<!--                                      {% csrf_token %}-->
+<!--                                      <fieldset class="form-group">-->
+<!--                                          {% for field in form %}-->
+<!--                                             <p >{{ field }}</p>-->
+
+<!--                                          {% endfor %}-->
+<!--                                      </fieldset>-->
+<!--                                      <div class="form-group " style="display:flex;justify-content:center;padding-top:3vw; padding-left:0vw">-->
+<!--                                          <button class="btn btn-primary button-more" style="letter-spacing:0" type="submit">ОБНОВИТЬ</button>-->
+<!--                                      </div>-->
+<!--                                  </form>-->
+<!--                            </div>-->
+<!--                         </div>-->
+<!--                     </div>-->
+<!--                 </div>-->
+<!--             </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+
+
+{% endblock content %}

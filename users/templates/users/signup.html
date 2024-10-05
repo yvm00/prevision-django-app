@@ -1,0 +1,107 @@
+{% extends "project/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<section class="login signup">
+    <div class="container">
+    <header class="d-flex header" >
+        <div class="d-flex header-navbar align-items-center">
+            <a class ="d-block header__logo dark-text" href="{% url 'home' %}">prevision</a>
+        </div>
+    </header>
+        <div class="login__content ">
+            <h1 class="login__text stage__title dark-text text-start text-sm-center">регистрация</h1>
+               <form class="login__form " method="post" >
+                    {% csrf_token %}
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger">
+                            {{ form.non_field_errors }}
+                        </div>
+                    {% endif %}
+                    {% for field in form %}
+                         <p >{{ field }}</p>
+                         {% if field.errors %}
+                            <ul class="alert alert-danger">
+                                {{ field.errors }}
+                            </ul>
+                        {% endif %}
+                    {% endfor %}
+                    <div class="button text-center mt-4 mt-lg-5 w-100" >
+                    <button type="submit" class="button-input">войти</button>
+                    </div>
+
+                </form>
+        </div>
+
+    </div>
+
+</section>
+<!--<div class="position-relative bg-image-reg " >-->
+<!--      <div class="container" style=" width: 81rem;" >-->
+<!--        <nav class="navbar navbar-expand-lg nav">-->
+<!--            <div class="container-fluid"  >-->
+<!--                <div class="col-md-2  ml-0 logo"  style="margin-right:1rem">-->
+<!--                    <a class="login-nav" style="text-decoration:none" href="{% url 'home' %}">PREVISION</a>-->
+<!--                     <button class="navbar-toggler" type="button"  data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--                      <span class="navbar-toggler-icon"></span>-->
+<!--                    </button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </nav>-->
+
+<!--           <div class="container mt-5 pt-5 text-center" >-->
+<!--                 <div class="col-5">-->
+<!--                     <div class="reg-text-main " >РЕГИСТРАЦИЯ</div>-->
+<!--                     <div class="col" >-->
+<!--                         <form method="post" style=" padding-top:2rem; padding-left:2rem">-->
+<!--                                {% csrf_token %}-->
+<!--                                {% if form.non_field_errors %}-->
+<!--                                    <div class="alert alert-danger">-->
+<!--                                        {{ form.non_field_errors }}-->
+<!--                                    </div>-->
+<!--                                {% endif %}-->
+<!--                                {% for field in form %}-->
+<!--                                     <p >{{ field }}</p>-->
+<!--                                     {% if field.errors %}-->
+<!--                                        <ul class="alert alert-danger">-->
+<!--                                            {{ field.errors }}-->
+<!--                                        </ul>-->
+<!--                                    {% endif %}-->
+<!--                                {% endfor %}-->
+<!--                                <div class="col pt-4 mt-2"  >-->
+<!--                                <button type="submit" class="btn btn-primary button-main p-2" style="letter-spacing: 1px;border-radius:25px; height:2.8rem;width:95%" >ЗАРЕГИСТРИРОВАТЬСЯ</button>-->
+<!--                                </div>-->
+<!--                            </form>-->
+
+
+
+<!--                     </div>-->
+
+<!--                 </div>-->
+<!--           </div>-->
+
+<!--      </div>-->
+
+<!--</div>-->
+
+<!--<form method="post">-->
+<!--    {% csrf_token %}-->
+<!--    {% if form.non_field_errors %}-->
+<!--        <div class="alert alert-danger">-->
+<!--            {{ form.non_field_errors }}-->
+<!--        </div>-->
+<!--    {% endif %}-->
+<!--    {% for field in form %}-->
+<!--        <p class="form-label">{{ field.label }}</p>-->
+<!--        <p>{{ field }}</p>-->
+<!--        {% if field.errors %}-->
+<!--            <ul class="alert alert-danger">-->
+<!--                {{ field.errors }}-->
+<!--            </ul>-->
+<!--        {% endif %}-->
+<!--    {% endfor %}-->
+<!--    <button type="submit" class="btn btn-outline-success">Зарегистрироваться</button>-->
+<!--</form>-->
+{% endblock content %}

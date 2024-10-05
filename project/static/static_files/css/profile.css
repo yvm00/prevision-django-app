@@ -1,0 +1,164 @@
+.profile{
+    background: url("../img/prof.png");
+    background-size: cover;
+    width: 100%;
+    height: 75rem;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.999;
+    z-index: -1;
+}
+.profile__content{
+    margin-left: 3rem !important;
+}
+.profile__actions{
+    margin: 2rem 5rem 2rem 0;
+}
+.button-link{
+    text-decoration:none;
+    color: var(--color-lavender);
+    font-size: 1.5rem;
+}
+.button-link:hover{
+    color: var(--color-nav-hover) !important;
+}
+.profile__actions-edit{
+    font-size: 1.2rem !important;
+    padding: 0.5rem 2rem !important;
+    letter-spacing: 0;
+}
+.profile__card{
+    margin:10rem 3.8rem 0 0;
+    background-color: var(--color-card-results) !important;
+    border: 2px solid #E3E3FF !important;
+}
+.profile__card-body{
+    height: 40rem;
+    width: 100%;
+}
+.profile__table{
+    height: 35rem;
+    overflow:auto;
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+}
+.edit__card{
+    height: 30rem !important;
+    width: 80% !important;
+    margin-top: 17rem !important;
+}
+.edit__form{
+    opacity: 0.999;
+    z-index: -1;
+}
+.edit__form
+input{
+    border:none !important;
+    border-radius: 2rem;
+    padding: 1.5rem;
+    width: 100%;
+    font-size: 1.5rem;
+    color: var(--color-title-dark);
+}
+
+input:focus-visible{
+    outline: var(--color-lavender) auto 1px !important;
+}
+
+@media only screen and (max-width: 576px) {
+   .profile{
+        width: 100%;
+        height: 70rem;
+    }
+    .profile__content{
+        margin-left: 1.5rem !important;
+        margin-top: 4rem !important;
+    }
+    .profile__actions{
+        margin: 1.5rem 5rem 2rem 0;
+    }
+    .button-link{
+        font-size: 1rem;
+    }
+    .profile__card{
+        margin: 3rem 2rem 0 0 !important;
+        padding: 0.5rem !important;
+    }
+    .profile__card-body{
+        height: 35rem;
+        width: 100%;
+    }
+    .profile__table{
+        height: 20rem;
+        font-size: 1rem;
+        margin-top: 0;
+    }
+     .edit__card{
+        height: 30rem !important;
+        width: 100% !important;
+        margin-top: 7rem !important;
+    }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+    .profile{
+        width: 100%;
+        height: 45rem;
+    }
+    .profile__content{
+        margin-left: 0 !important;
+    }
+    .profile__actions{
+        margin: 1.5rem 5rem 2rem 0;
+    }
+    .button-link{
+        font-size: 1.2rem;
+    }
+    .profile__card{
+        margin: 6rem auto 0 auto !important;
+    }
+    .profile__card-body{
+        height: 25rem;
+        width: 100%;
+    }
+    .profile__table{
+        height: 20rem;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+    .edit__card{
+        height: 25rem !important;
+        width: 90% !important;
+        margin-top: 13rem !important;
+    }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1439px) {
+    .profile{
+        width: 100%;
+        height: 55rem;
+    }
+    .profile__content{
+        margin-left: 2rem !important;
+    }
+    .profile__actions{
+        margin: 1.5rem 5rem 2rem 0;
+    }
+    .profile__card{
+        margin:10rem 3.8rem 0 0;
+    }
+    .profile__card-body{
+        height: 30rem;
+        width: 100%;
+    }
+    .profile__table{
+        height: 35rem;
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+    .edit__card{
+        height: 30rem !important;
+        width: 80% !important;
+        margin-top: 10rem !important;
+    }
+}

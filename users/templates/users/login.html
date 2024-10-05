@@ -1,0 +1,43 @@
+{% extends "project/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<section class="login">
+    <div class="container">
+    <header class="d-flex header" >
+        <div class="d-flex header-navbar align-items-center">
+            <a class ="d-block header__logo dark-text" href="{% url 'home' %}">prevision</a>
+        </div>
+    </header>
+        <div class="login__content ">
+            <h1 class="login__text stage__title dark-text text-start text-sm-center">добро <span class="stage__title-span"> пожаловать! </span></h1>
+               <form class="login__form " method="post" >
+                    {% csrf_token %}
+                    {% if form.non_field_errors %}
+                        <div class="alert alert-danger">
+                                неверное имя пользователя или пароль
+                        </div>
+                    {% endif %}
+                    <p><input type="text" name="username" class="form-control input-box" placeholder="имя" maxlength="150" required="" id="id_username"></p>
+                    <p><input type="password" name="password"  class="form-control input-box" placeholder="пароль" maxlength="128" required="" id="id_password"></p>
+                    <a class="button-link ps-4 text-lowercase " href="#">забыли пароль?</a>
+                    <div class="button text-center mt-4 mt-lg-5 w-100" >
+                    <button type="submit" class="button-input">войти</button>
+                    </div>
+                   <div class="ps-4">
+                       <a class="button-link " href="{% url 'signup' %}">зарегистрироваться
+
+                       </a>
+                   </div>
+
+                </form>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+{% endblock content %}

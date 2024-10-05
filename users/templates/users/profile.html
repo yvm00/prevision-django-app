@@ -1,0 +1,55 @@
+{% extends "project/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="wrapper">
+<section class="profile">
+    <div class="container">
+        {% include 'project/navbar.html' %}
+        <div class="row row-cols-1 row-cols-sm-2 profile__content justify-content-between">
+            <div class="col col-sm-6 col-xl-5 ps-0 mt-0 mt-xl-5">
+                <p class="wow forecast-main__title-small mb-0 mt-sm-3 mt-xl-5" data-wow-duration="1s" data-wow-delay="0.25s" >личный кабинет</p>
+                <h1 class="wow stage__title mt-4 mt-lg-2 mt-xl-4 " data-wow-duration="1s" data-wow-delay="0.5s">добрый день,
+                <span>
+                    {{ user.username }}!
+                </span>
+                </h1>
+            </div>
+            <div class="col col-sm-6 p-0">
+                <div class="card profile__card">
+                    <div class="card-body profile__card-body">
+                        <div class="profile__table">
+                            <table class="table">
+                              <thead >
+                                <tr >
+                                  <th scope="col">Прогноз</th>
+                                  <th scope="col"></th>
+                                </tr>
+                              </thead>
+                              <tbody >
+                                 {% for saved in user_forecasts %}
+                                  <tr>
+                                  <td >{{ saved.forecast.file_name }}</td>
+                                  <td>
+                                      <a class="button-link dark-text text-lowercase" href="{{ saved.forecast.pdf.url }}" download="{{ saved.forecast.pdf.name }}">Cкачать</a>
+                                  </td>
+                                  </tr>
+                                  {% endfor %}
+                              </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile__actions text-end">
+                     <a class="button-link dark-text" href="{% url 'edit' %}">изменить профиль</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+{% include 'project/footer.html' %}
+
+
+{% endblock content %}

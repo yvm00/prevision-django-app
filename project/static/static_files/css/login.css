@@ -1,0 +1,110 @@
+.login{
+    background: url("../img/reg.png");
+    background-size: cover;
+    width: 100%;
+    height: 75rem;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.999;
+    z-index: -1;
+}
+.dark-text{
+    color: var(--color-title-dark) !important;
+}
+.login__content{
+    width: 40%;
+    margin: 9rem 0 0 3rem;
+}
+.login__form{
+    opacity: 0.999;
+    z-index: -1;
+    margin: 3rem 5rem;
+}
+.login__form
+input{
+    border:1px solid var(--color-fill) !important;
+    border-radius: 2rem;
+    margin-top: 2rem;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    font-size: 1.5rem;
+    color: var(--color-title-dark) !important;
+}
+input:focus:focus-visible{
+    outline: var(--color-lavender) auto 1px !important;
+    box-shadow: none !important;
+}
+input::placeholder{
+    color: var(--color-lavender) !important;
+}
+
+
+
+@media only screen and (max-width: 576px) {
+    .container{
+        padding: 0 !important;
+    }
+    .login{
+        height: 20rem;
+    }
+    .login__content{
+        width: 80%;
+        margin: 9rem 0 0 1.5rem;
+    }
+    .login__text{
+        width: 50%;
+    }
+    .login__form{
+        margin: 1rem 0;
+    }
+    .login__form
+    input{
+        margin-top: 1.5rem;
+        padding: 1rem 1.5rem;
+        width: 100%;
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+  .login{
+        height: 40rem;
+    }
+    .login__content{
+        width: 50%;
+        margin: 6rem 0 0 0;
+    }
+    .login__form{
+        margin: 2rem 0;
+    }
+    .login__form
+    input{
+        margin-top: 2rem;
+        padding: 1rem 1.5rem;
+        width: 100%;
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1439px) {
+    .login{
+        height: 50rem;
+    }
+    .login__content{
+        width: 40%;
+        margin: 6rem 0 0 3rem;
+    }
+    .login__text{
+        width: 90%;
+    }
+    .login__form{
+        margin: 3rem 0;
+    }
+    .login__form
+    input{
+        margin-top: 2rem;
+        padding: 1rem 1.5rem;
+        width: 100%;
+        font-size: 1.5rem;
+    }
+}

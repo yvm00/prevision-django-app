@@ -1,0 +1,120 @@
+{% extends "project/base.html" %}
+{% load static %}
+{% block content %}
+<div class="wrapper">
+<!--  Главная   -->
+    <section class="forecast-main">
+        <div class="container">
+             {% include 'project/navbar.html' %}
+             <div class="d-flex forecast-main__content ">
+                <div class="col-5 col-8 col-md-5 stage__content align-items-center el-paroller"
+                    data-paroller-factor="0.2"
+                    data-paroller-factor-xs="0.1"
+                    data-paroller-factor-sm="0.15"
+                    data-paroller-type="foreground"
+                    data-paroller-direction="vertical">
+                     <p class="wow forecast-main__title-small" data-wow-duration="1s" data-wow-delay="0.25s" >быстро и просто</p>
+                     <h1 class="wow stage__title" data-wow-duration="1s" data-wow-delay="0.5s">создай
+                     <span class="stage__title-span">свой</span>
+                     прогноз</h1>
+                     <p class="wow stage__text mt-4" data-wow-duration="1s" data-wow-delay="0.75s">расчитай будующую стоимость своего товара в несколько кликов</p>
+               </div>
+        </div>
+    </div>
+    </section>
+<!--  Шаги  -->
+    <section class=" wow steps " data-wow-duration="1s" data-wow-delay="0.2s">
+         <div class=" steps__text text-center" >
+            <h2 class="description__title-small">о процессе</h2>
+            <h3 class="description__title-main">как это работает</h3>
+        </div>
+        <div class="row steps__content row-cols-1 row-cols-sm-2 row-cols-md-3">
+            <div class="col">
+                    <div class="steps__card card h-100 text-center">
+                        <div class="card-body steps__card-body">
+                                <div class="circle-out text-center ">
+                                    <div class="steps__circle">
+                                         <p class="description__title-main circle__text ">1</p>
+                                    </div>
+                                </div>
+                             <h4 class="card-title pt-3 pt-sm-5">загрузите данные</h4>
+                             <p class="card-text">данные о зависимости текущей цены продукта от времени
+                                                загружаются на сайт в формате xlxs(excel)
+                             </p>
+                        </div>
+                    </div>
+            </div>
+            <div class="col">
+                    <div class="steps__card card h-100 text-center"  >
+                        <div class="card-body steps__card-body ps-0 pe-0">
+                              <div class="circle-out text-center ">
+                                    <div class="steps__circle">
+                                         <p class="description__title-main circle__text ">2</p>
+                                    </div>
+                                </div>
+                             <h4 class="card-title pt-3 pt-sm-5">немного подождите </h4>
+                             <p class="card-text"> прогнозирование выполнятеся с использованием
+                                                    технологии arima на период 12 месяцев
+                             </p>
+                        </div>
+                    </div>
+            </div>
+            <div class="col">
+                    <div class="steps__card card h-100 text-center">
+                        <div class="card-body">
+                               <div class="circle-out text-center ">
+                                    <div class="steps__circle">
+                                         <p class="description__title-main circle__text ">3</p>
+                                    </div>
+                               </div>
+                             <h4 class="card-title pt-3 pt-sm-5">получите результат</h4>
+                             <p class="card-text">прогноз предоставляется в виде таблицы и графика,
+                                                которые вы можете сохранить в личный кабинет
+                                                у нас на сайте и скачать себе на устройство
+                             </p>
+                        </div>
+                    </div>
+            </div>
+
+
+        </div>
+    </section>
+<!--Загрузка-->
+    <section class="load">
+        <div class="container">
+            <div class="load__content text-center">
+                 <form method="post" id='file-form' class="load__actions" enctype="multipart/form-data">
+                  {% csrf_token %}
+                     <div class="text-center">
+                         <input class="form-control load__input" type="file" accept=".xlsx" id="file" name="file">
+                     </div>
+                     <div class="button button-light  mt-5">
+                        <button id="btn"  class="button-input"  type="submit">построить прогноз</button>
+                     </div>
+                 </form>
+            </div>
+
+        </div>
+
+    </section>
+</div>
+{% include 'project/footer.html' %}
+
+<script>
+
+        $(document).on('submit','#file-form', async function(e){
+             if ($("#file").val() == ''){
+                e.preventDefault();
+                alert("Файл не выбран");
+            } else if($("#file")[0].files[0].type != 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'){
+                  e.preventDefault();
+                  alert("Неверный формат файла");
+            }
+        });
+
+</script>
+
+{% endblock content %}
+
+
+
