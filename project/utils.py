@@ -213,8 +213,8 @@ def render_table_header(pdf, cols):
 
 def make_report(filename, df_cols, df, forecast, graph):
     pdf = FPDF()
-    pdf.add_font("Montserrat", style="", fname="Montserrat-Regular.ttf")
-    pdf.add_font("Montserrat", style="B", fname="Montserrat-Bold.ttf")
+    pdf.add_font("Montserrat", style="", fname=r"C:\Users\Яна\PycharmProjects\GradProject\project\static\static_files\Montserrat-Regular.ttf")
+    pdf.add_font("Montserrat", style="B", fname=r"C:\Users\Яна\PycharmProjects\GradProject\project\static\static_files\Montserrat-Bold.ttf")
     w = 210
     h = 297
     filename = filename.replace(".xlsx", "")
