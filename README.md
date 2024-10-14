@@ -1,5 +1,5 @@
 <p align="center">
-    <img style="width: 35%" src="src/image/ppl.png" >
+    <img style="width: 35%" src="/project/static/static_files/img/ppl.png" >
     <h2 align="center"><b>Prevision</b></h2>
       <br />
   <p align="center">
@@ -11,14 +11,15 @@
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![Bootastrap5](https://img.shields.io/badge/bootstrap-%237952B3.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
-![React](https://img.shields.io/badge/react-%2361DAFB.svg?style=for-the-badge&logo=react&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-![Userfront](https://img.shields.io/badge/Userfront-FF6161.svg?style=for-the-badge)
+![Python](https://img.shields.io/badge/python-%233776AB.svg?style=for-the-badge&logo=python&logoColor=%23F7DF1E)
+![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white)
+![Postgresql](https://img.shields.io/badge/postgresql-%234169E1.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![PyCharm](https://img.shields.io/badge/pycharm-000000.svg?style=for-the-badge&logo=pycharm&logoColor=%23F7DF1E)
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 
 # 🔎Introduction
-This is a frontend part which based on React. You can see the whole project <a align="center" href="https://prevision-app-react.vercel.app/">here</a> .
+This is a project based on Django. You can see the frontend part of the project based on React with demo <a align="center" href="https://github.com/yvm00/prevision-react-app">here</a> .
 
 # ✨About this project
 **Prevision** is a fully responsive website that can help to automate the process of forecasting the cost of goods, which will allow entrepreneurs to assess possible risks when doing business.
@@ -39,14 +40,14 @@ It includes several pages as home, forecast, example results (results), profile,
 
 ## Website Screenshots 
 ### Main pages 
- <img  src="src/image/screenshots/main.png" >
- <img  src="src/image/screenshots/forecast.png" >
- <img  src="src/image/screenshots/results.png" >
+ <img  src="/project/static/static_files/img/screenshots/main.png" >
+ <img  src="/project/static/static_files/img/screenshots/forecast.png" >
+ <img  src="/project/static/static_files/img/screenshots/results.png" >
  
  ### Pages which require user authorization
- <img  src="src/image/screenshots/profile.png" >
- <img  src="src/image/screenshots/edit.png" >
+ <img  src="/project/static/static_files/img//screenshots/profile.png" >
+ <img  src="/project/static/static_files/img/screenshots/edit.png" >
   
  ### Authorization pages
- <img  src="src/image/screenshots/login.png" >
- <img  src="src/image/screenshots/signup.png" >
+ <img  src="/project/static/static_files/img/screenshots/login.png" >
+ <img  src="/project/static/static_files/img/screenshots/signup.png" >
